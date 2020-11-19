@@ -63,6 +63,10 @@ class ControllerExtensionPaymentStripe extends Controller {
 
             $data['sessionId'] = $session['id'];
 
+            //add order history
+            $order_status_id = $this->config->get('payment_stripe_order_pending_status_id');
+            $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $order_status_id);
+
             $this->response->setOutput($this->load->view('extension/payment/stripe_confirm', $data));
         } catch (\Exception $e) {
             $json = array('error' => $e->getMessage());

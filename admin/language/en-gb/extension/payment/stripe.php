@@ -63,3 +63,6 @@ $_['error_live_secret_key'] = 'Live Secret Key Required!';
 
 $_['error_test_endpoint_key'] = 'Test Endpoint Key Required!';
 $_['error_live_endpoint_key'] = 'Live Endpoint Key Required!';
+
+$_['entry_order_pending_status'] = 'Order Pending Status';
+$_['entry_order_pending_status_help'] = 'Order status that will set for Pending Payment';
