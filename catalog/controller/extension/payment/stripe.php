@@ -114,7 +114,7 @@ class ControllerExtensionPaymentStripe extends Controller {
 
             $this->initStripe();
 
-            if ($this->config->get('payment_stripe_live_endpoint_key') == 'live' || (isset($this->request->request['livemode']) && $this->request->request['livemode'] == "true")) {
+            if ($this->config->get('payment_stripe_environment') == 'live') {
                 $stripe_endpoint_key = $this->config->get('payment_stripe_live_endpoint_key');
             } else {
                 $stripe_endpoint_key = $this->config->get('payment_stripe_test_endpoint_key');
